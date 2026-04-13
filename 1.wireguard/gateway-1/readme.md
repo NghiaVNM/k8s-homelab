@@ -3,8 +3,8 @@ OS: Rocky Linux 10.1 (Red Quartz)
 
 # 2. Install
 ```
-   dnf install epel-release
-   dnf install wireguard-tools
+  dnf install epel-release
+  dnf install wireguard-tools
 ```
 
 # 3. Setup server
