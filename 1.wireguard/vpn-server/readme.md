@@ -6,7 +6,7 @@ OS: Ubuntu 22.04.4 LTS
   apt install wireguard
 ```
 
-# 3. Setup
+# 3. Setup server
 ```
   sysctl -w net.ipv4.ip_forward=1
   ip link add dev wg-vpn type wireguard
@@ -27,8 +27,28 @@ net.ipv4.ip_forward=1
 
 ```
 # /etc/wireguard/vpn-server.conf
-
+# vpn-server
 [Interface]
 PrivateKey = <key>
+Address = 10.8.0.1/24 
 ListenPort = 51820
+```
+
+# 4. Setup client
+```
+  systemctl restart wg-quick@vpn-server
+```
+
+```
+# /etc/wireguard/vpn-server.conf
+# vpn-server
+[Interface]
+PrivateKey = <key>
+Address = 10.8.0.1/24 
+ListenPort = 51820
+
+# vpn-gateway-1
+[Peer]
+PublicKey = <key>
+AllowedIPs = 10.8.0.2/32
 ```
