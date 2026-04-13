@@ -24,7 +24,7 @@ net.ipv4.ip_forward=1
 
 ```
 # /etc/wireguard/vpn-gateway-1.conf
-
+# vpn-gateway-1
 [Interface]
 PrivateKey = <key>
 Address = 10.8.0.2/24
@@ -36,6 +36,3 @@ Endpoint = <ip>:51820
 AllowedIPs = 10.8.0.0/24
 PersistentKeepalive = 25
 ```
-
-# 4. Setup client
-
