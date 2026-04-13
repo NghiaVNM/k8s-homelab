@@ -1,5 +1,5 @@
 # 1. information
-OS: Ubuntu 24.04.4 LTS
+OS: Ubuntu 22.04.4 LTS
 
 # 2. Install
 ```
@@ -16,6 +16,7 @@ OS: Ubuntu 24.04.4 LTS
   wg setconf wg-vpn /etc/wireguard/vpn-server.conf
   ip link set up dev wg-vpn
   wg show
+  systemctl enable wg-quick@vpn-server
   systemctl status wg-quick@vpn-server
 ```
 ```
@@ -28,6 +29,6 @@ net.ipv4.ip_forward=1
 # /etc/wireguard/vpn-server.conf
 
 [Interface]
-PrivateKey = EJJccz5MsV7vD1lmHEonvzkUUMqo6jMz6tnh0qhhPmw=
+PrivateKey = <key>
 ListenPort = 51820
 ```
